@@ -43,7 +43,7 @@ has a year-to-year correlation of 0.41, so part of it is likely real defensive s
 - *Gradient boosting (geometry)*: coordinates, distance, angle, clock, period, zone.
 - *Gradient boosting (+ shot type)*: adds the tracked shot-type label (e.g. "Driving Floating Jump Shot").
 
-**Validation design.** Hyper-parameters are tuned on 2023-24 (trained on 2021-23), the final models are refit on 2021-24 and scored once on
+**Validation design.** Hyper-parameters are tuned on 2023-24 (trained on 2021-23), the final models are refit on 2021-23 (train + validation) and scored once on
 2024-25. Uncertainty comes from a **game-level cluster bootstrap**, since shots within a game are not independent.
 For the player study, 2021-23 expectations are *cross-fitted* (each season scored by a model trained on the other training seasons)
 and no 2024-25 data touches any predictor.
