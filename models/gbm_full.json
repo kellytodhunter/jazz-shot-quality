@@ -1,0 +1,63 @@
+{
+  "train_seasons": [
+    2021,
+    2022,
+    2023
+  ],
+  "test_season": 2024,
+  "metrics": {
+    "zone_baseline": {
+      "log_loss": 0.6575142627904227,
+      "brier": 0.2325970348200274,
+      "auc": 0.63362384473113,
+      "ece": 0.003728939450299308
+    },
+    "logit_geometry": {
+      "log_loss": 0.64919500440455,
+      "brier": 0.22903249655472863,
+      "auc": 0.6457030553687674,
+      "ece": 0.0066868406969612035
+    },
+    "gbm_geometry": {
+      "log_loss": 0.6484434188943852,
+      "brier": 0.22872761585487153,
+      "auc": 0.6476115701195972,
+      "ece": 0.00514385479330111
+    },
+    "gbm_full": {
+      "log_loss": 0.6357276663558896,
+      "brier": 0.22359476612160245,
+      "auc": 0.6604570032860195,
+      "ece": 0.005224169338044487
+    }
+  },
+  "params": {
+    "gbm_geometry": {
+      "learning_rate": 0.05,
+      "max_leaf_nodes": 15,
+      "l2_regularization": 1.0
+    },
+    "gbm_full": {
+      "learning_rate": 0.1,
+      "max_leaf_nodes": 8,
+      "l2_regularization": 1.0
+    }
+  },
+  "n_train": 652641,
+  "model": "gbm_full",
+  "features": [
+    "x_ft",
+    "y_ft",
+    "dist_ft",
+    "angle_deg",
+    "sec_left",
+    "period_c",
+    "is_three",
+    "is_corner3",
+    "backcourt",
+    "end_of_period",
+    "zone_basic",
+    "zone_area",
+    "action_type"
+  ]
+}

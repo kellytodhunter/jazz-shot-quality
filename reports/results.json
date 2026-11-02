@@ -1,0 +1,261 @@
+{
+  "validation": {
+    "2021": {
+      "rows": 216722,
+      "max_distance_gap_ft": 1.0,
+      "inconsistent_shot_type_rows": 0
+    },
+    "2022": {
+      "rows": 217218,
+      "max_distance_gap_ft": 1.0,
+      "inconsistent_shot_type_rows": 0
+    },
+    "2023": {
+      "rows": 218701,
+      "max_distance_gap_ft": 1.0,
+      "inconsistent_shot_type_rows": 0
+    },
+    "2024": {
+      "rows": 219527,
+      "max_distance_gap_ft": 1.0,
+      "inconsistent_shot_type_rows": 0
+    }
+  },
+  "tuning": {
+    "gbm_geometry": [
+      {
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.6488211273135042
+      },
+      {
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 8,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.6488487482060817
+      },
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 8,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.6488515479475722
+      },
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.6488605886566715
+      },
+      {
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.6488851067903074
+      },
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 31,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.6489490325079056
+      }
+    ],
+    "gbm_full": [
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 8,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.635406460114289
+      },
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 31,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.6354134728514906
+      },
+      {
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 31,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.6354169838900126
+      },
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.6354331558648283
+      },
+      {
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.6354501290762599
+      },
+      {
+        "learning_rate": 0.05,
+        "max_leaf_nodes": 8,
+        "l2_regularization": 1.0,
+        "valid_log_loss": 0.6356968951670383
+      }
+    ]
+  },
+  "best_params": {
+    "gbm_geometry": {
+      "learning_rate": 0.05,
+      "max_leaf_nodes": 15,
+      "l2_regularization": 1.0
+    },
+    "gbm_full": {
+      "learning_rate": 0.1,
+      "max_leaf_nodes": 8,
+      "l2_regularization": 1.0
+    }
+  },
+  "test_metrics": {
+    "zone_baseline": {
+      "log_loss": 0.6575142627904227,
+      "brier": 0.2325970348200274,
+      "auc": 0.63362384473113,
+      "ece": 0.003728939450299308
+    },
+    "logit_geometry": {
+      "log_loss": 0.64919500440455,
+      "brier": 0.22903249655472863,
+      "auc": 0.6457030553687674,
+      "ece": 0.0066868406969612035
+    },
+    "gbm_geometry": {
+      "log_loss": 0.6484434188943852,
+      "brier": 0.22872761585487153,
+      "auc": 0.6476115701195972,
+      "ece": 0.00514385479330111
+    },
+    "gbm_full": {
+      "log_loss": 0.6357276663558896,
+      "brier": 0.22359476612160245,
+      "auc": 0.6604570032860195,
+      "ece": 0.005224169338044487
+    }
+  },
+  "bootstrap_vs_baseline_logloss": {
+    "logit_geometry": {
+      "mean": 0.008319258385872693,
+      "lo": 0.007571343274643751,
+      "hi": 0.00909523827551563
+    },
+    "gbm_geometry": {
+      "mean": 0.009070843896037748,
+      "lo": 0.00829142923918332,
+      "hi": 0.009877220567980724
+    },
+    "gbm_full": {
+      "mean": 0.021786596434533005,
+      "lo": 0.020771763298282297,
+      "hi": 0.02274537905287438
+    },
+    "gbm_full_vs_gbm_geometry": {
+      "mean": 0.012715752538495257,
+      "lo": 0.011945352387049345,
+      "hi": 0.013433814888073629
+    }
+  },
+  "forecast": {
+    "all": {
+      "players": 247,
+      "prior_mu": -0.004605422962135892,
+      "true_talent_sd_per_shot": 0.0643152464609266,
+      "mse_league_average": 0.006329561133923071,
+      "mse_raw": 0.003519472155116903,
+      "mse_shrunk": 0.0032439673548548104,
+      "corr_raw_vs_next": 0.6446842426158808,
+      "corr_shrunk_vs_next": 0.6459590124710466,
+      "mse_gain_shrunk_vs_raw_ci95": [
+        0.00011871179461129124,
+        0.0004464125349802417
+      ]
+    },
+    "3PT": {
+      "players": 217,
+      "prior_mu": -0.003534989311578348,
+      "true_talent_sd_per_shot": 0.06969415106345402,
+      "mse_league_average": 0.011827538668179538,
+      "mse_raw": 0.01004986454673057,
+      "mse_shrunk": 0.008770898585916212,
+      "corr_raw_vs_next": 0.4613002483322253,
+      "corr_shrunk_vs_next": 0.46298356908996763,
+      "mse_gain_shrunk_vs_raw_ci95": [
+        0.00040487370788272687,
+        0.0022908202262995527
+      ]
+    },
+    "2PT": {
+      "players": 223,
+      "prior_mu": -0.009614924925910153,
+      "true_talent_sd_per_shot": 0.07504466218197597,
+      "mse_league_average": 0.008034542609527531,
+      "mse_raw": 0.004251471136225381,
+      "mse_shrunk": 0.0038791849173977345,
+      "corr_raw_vs_next": 0.6340134966965246,
+      "corr_shrunk_vs_next": 0.6422082939596686,
+      "mse_gain_shrunk_vs_raw_ci95": [
+        0.000182506073333338,
+        0.0005902659051308616
+      ]
+    }
+  },
+  "forecast_geometry_model": {
+    "players": 247,
+    "prior_mu": -0.0009676873640551505,
+    "true_talent_sd_per_shot": 0.06709262287628083,
+    "mse_league_average": 0.006375453055475272,
+    "mse_raw": 0.003918548444663791,
+    "mse_shrunk": 0.003567584460399522,
+    "corr_raw_vs_next": 0.6250517475735001,
+    "corr_shrunk_vs_next": 0.6262271376284193
+  },
+  "league_prior_2024": {
+    "mu_per100": -0.9401613999378984,
+    "tau_per100": 7.3128464175197365,
+    "players": 415
+  },
+  "jazz_team": {
+    "team": "Utah Jazz",
+    "fga": 7272,
+    "pps": 1.0662816281628162,
+    "xpps": 1.0662153450016183,
+    "shotmaking": 6.62831611979442e-05,
+    "opp_fga": 7622,
+    "opp_pps": 1.1189976384151141,
+    "opp_xpps": 1.0733400554478907,
+    "opp_shotmaking": 0.04565758296722344,
+    "shot_quality_rank": 27,
+    "shotmaking_rank": 18,
+    "shot_quality_allowed_rank": 9,
+    "shotmaking_allowed_rank": 29
+  },
+  "team_persistence": {
+    "xpps": {
+      "r": 0.5916320471822416,
+      "n_pairs": 90,
+      "league_sd": 0.01739995960105714
+    },
+    "shotmaking": {
+      "r": 0.5103945384097173,
+      "n_pairs": 90,
+      "league_sd": 0.037970020410131415
+    },
+    "opp_xpps": {
+      "r": 0.800799602259896,
+      "n_pairs": 90,
+      "league_sd": 0.02097869736679668
+    },
+    "opp_shotmaking": {
+      "r": 0.40959618033782363,
+      "n_pairs": 90,
+      "league_sd": 0.026329622919086818
+    }
+  },
+  "jazz_rank_corr_full_vs_geometry": 0.8461538461538463,
+  "n_test_shots": 219527,
+  "n_train_shots": 652641
+}
